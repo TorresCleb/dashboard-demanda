@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.local
+*.log
+.DS_Store
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Legado (código em backend/)
+files/
+
+# Clone temporário
+dashboard-demanda-temp/
