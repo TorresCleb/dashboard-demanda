@@ -31,7 +31,8 @@ copy backend\.env.example backend\.env
 | Variável | Descrição |
 |----------|-----------|
 | `PORT` | Porta da API (padrão `3000`) |
-| `ANTHROPIC_API_KEY` | Opcional; vazio = classificação por palavras-chave |
+| `GEMINI_API_KEY` | Opcional ([Google AI Studio](https://aistudio.google.com/apikey)); vazio = palavras-chave locais |
+| `GEMINI_MODEL` | Opcional; padrão `gemini-2.0-flash` |
 | `EVOLUTION_API_KEY` | Chave do Evolution API (webhook) |
 
 **Frontend** — copie e edite se necessário:
@@ -75,7 +76,7 @@ demandaIA/
 ├── backend/
 │   ├── server.js
 │   ├── database.js
-│   ├── classificador-ia.js
+│   ├── classificador-gemini.js
 │   └── package.json
 ├── frontend/
 │   ├── app/

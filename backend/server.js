@@ -7,27 +7,14 @@
 // (classificador, banco de dados) e devolve a resposta.
 // ─────────────────────────────────────────────────────────────────────────────
 
+// dotenv primeiro: classificador e outras libs leem process.env ao carregar
+require('dotenv').config()
+
 const express = require('express')
 const cors = require('cors')
 
-// ── Importa os módulos internos ───────────────────────────────────────────────
-//
-// require('./arquivo') carrega um módulo local.
-// É como "importar uma ferramenta da gaveta".
-//
-// - database:        funções de banco de dados (salvar, listar, remover...)
-// - classificador-ia: função classificar() que chama a IA
-
 const db = require('./database')
-const { classificar } = require('./classificador-ia')
-
-// ── Carrega variáveis de ambiente ─────────────────────────────────────────────
-//
-// O arquivo .env guarda informações sensíveis (chaves de API, porta...).
-// Nunca coloque esses valores diretamente no código — use variáveis de ambiente.
-// process.env.NOME_DA_VARIAVEL acessa o valor definido no .env
-
-require('dotenv').config()
+const { classificar } = require('./classificador-gemini')
 
 const app  = express()
 const PORT = process.env.PORT || 3000
@@ -100,7 +87,7 @@ app.post('/webhook', async (req, res) => {
     // classificar() é uma função assíncrona (async), por isso usamos "await".
     // "await" significa: "espere essa operação terminar antes de continuar".
     //
-    // Enquanto a IA processa (leva ~1 segundo), o Node.js pode atender
+    // Enquanto o classificador (Gemini ou local) processa (~0,5–2 s), o Node.js pode atender
     // outras requisições — ele não fica travado esperando.
     //
     // A função devolve: { tipo, urgente, resumo }
