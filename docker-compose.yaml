@@ -1,0 +1,21 @@
+
+services:
+  evolution-api:
+    container_name: evolution_api
+    image: atendai/evolution-api:v1.8.2
+    restart: always
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - evolution_instances:/evolution/instances
+ 
+    # Permite que o contêiner acesse o localhost da sua máquina.
+    # Necessário para o webhook chamar sua API Node.js (porta 3000).
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+ 
+volumes:
+  evolution_instances:
+ 
