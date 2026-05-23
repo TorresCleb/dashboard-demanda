@@ -1,0 +1,25 @@
+{
+  "demandas": [
+    {
+      "id": 2,
+      "tecnico": "Caio",
+      "mensagem": "Cliente Neide necessário encaminhar pra equipe de estrutura abrir CTO na rua tem sete vão não tem como fazer tudo isso",
+      "resumo": "Necessária intervenção da equipe de estrutura para possibilitar abertura de CTO devido a sete vãos.",
+      "tipo": "Estrutura",
+      "urgente": false,
+      "data": "20/05/2026",
+      "hora": "21:51"
+    },
+    {
+      "id": 1,
+      "tecnico": "Cleber",
+      "mensagem": "Abrtura de QTO no ribeirópolis - Praia Grade",
+      "resumo": "Abertura de CTO no Ribeirópolis - Praia Grande",
+      "tipo": "CTO",
+      "urgente": false,
+      "data": "20/05/2026",
+      "hora": "21:50"
+    }
+  ],
+  "nextId": 3
+}

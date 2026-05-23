@@ -10,7 +10,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai')
 function getModel () {
   const chave = process.env.GEMINI_API_KEY?.trim()
   if (!chave) return null
-  const nomeModelo = process.env.GEMINI_MODEL?.trim() || 'gemini-2.0-flash'
+  const nomeModelo = process.env.GEMINI_MODEL?.trim() || 'gemini-2.5-flash'
   const genAI = new GoogleGenerativeAI(chave)
   return genAI.getGenerativeModel({ model: nomeModelo })
 }
