@@ -22,6 +22,7 @@ solicitações de serviço. Sua função é ler cada mensagem e extrair as
 informações estruturadas abaixo.
 
 Tipos de serviço possíveis:
+- "ROMPIMENTO" → Sempre que verificar essa mensagem, classificar como urgente.
 - "CTO"       → abertura, instalação ou troca de caixa terminal óptica
 - "Splitter"  → inserção, troca ou manutenção de splitter óptico
 - "Fusão"     → emenda, fusão ou reparo de cabo de fibra óptica

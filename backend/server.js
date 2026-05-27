@@ -16,7 +16,12 @@ const cors = require('cors')
 const db = require('./database')
 const { classificar } = require('./classificador-gemini')
 
-const app  = express()
+
+const GRUPOS_AUTORIZADOS = new Set([
+  '120363406293885960@g.us',  // grupo de teste
+  // '120363xxxxxxxxx@g.us',  // adicione outros grupos aqui quando precisar
+])
+const app = express()
 const PORT = process.env.PORT || 3001
 
 // ── Middlewares ───────────────────────────────────────────────────────────────
@@ -67,7 +72,15 @@ app.post('/webhook', async (req, res) => {
     // Grupos sempre terminam com "@g.us".
     // Conversas diretas terminam com "@s.whatsapp.net".
     // Só queremos processar mensagens de grupos.
+
+
+
     if (!remoteJid.endsWith('@g.us')) return res.sendStatus(200)
+
+    if (!GRUPOS_AUTORIZADOS.has(remoteJid)) {
+      console.log(`[Webhook] Grupo não autorizado ignorado: ${remoteJid}`)
+      return res.sendStatus(200)
+    }
 
     // Ignora mensagens que o próprio número conectado enviou
     // (para não criar demandas a partir das respostas automáticas do bot)
@@ -76,13 +89,15 @@ app.post('/webhook', async (req, res) => {
     // Extrai o nome do técnico e o texto da mensagem
     // O operador "??" significa "se o valor da esquerda for null/undefined,
     // use o valor da direita como padrão"
-    const tecnico  = data.pushName ?? 'Desconhecido'
+    const tecnico = data.pushName ?? 'Desconhecido'
     const mensagem = data.message?.conversation
-                  ?? data.message?.extendedTextMessage?.text
-                  ?? ''
+      ?? data.message?.extendedTextMessage?.text
+      ?? ''
 
     // Não processa mensagens vazias (fotos, áudios, stickers...)
     if (!mensagem.trim()) return res.sendStatus(200)
+
+
 
     // ── Aqui entra a IA ───────────────────────────────────────────────────────
     //
