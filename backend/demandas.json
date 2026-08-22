@@ -1,36 +1,6 @@
 {
   "demandas": [
     {
-      "id": 27,
-      "tecnico": "Léw Cabra Velho 🏍️🚛",
-      "mensagem": "NGM quer perder todo mundo quer ganhar",
-      "resumo": "Cabo de fibra rompido na Rua da Praia, próximo ao número 123",
-      "tipo": "Fusão",
-      "urgente": true,
-      "data": "26/05/2026",
-      "hora": "21:53"
-    },
-    {
-      "id": 26,
-      "tecnico": "Léw Cabra Velho 🏍️🚛",
-      "mensagem": "Tá porra",
-      "resumo": "CTO sem portas disponíveis, necessário abrir nova caixa",
-      "tipo": "CTO",
-      "urgente": true,
-      "data": "26/05/2026",
-      "hora": "21:52"
-    },
-    {
-      "id": 25,
-      "tecnico": "Cleber",
-      "mensagem": "Rompimento identificado no cabuçu",
-      "resumo": "Instalação de splitter no Bairro Floresta, cliente sem sinal (urgente)",
-      "tipo": "Splitter",
-      "urgente": true,
-      "data": "26/05/2026",
-      "hora": "21:52"
-    },
-    {
       "id": 24,
       "tecnico": "Ellen",
       "mensagem": "Faço 300$ pelo olxxx",
@@ -39,36 +9,6 @@
       "urgente": false,
       "data": "26/05/2026",
       "hora": "21:52"
-    },
-    {
-      "id": 23,
-      "tecnico": "Caio",
-      "mensagem": "Abrir cx",
-      "resumo": "Abrir caixa CTO",
-      "tipo": "CTO",
-      "urgente": false,
-      "data": "26/05/2026",
-      "hora": "21:49"
-    },
-    {
-      "id": 22,
-      "tecnico": "Cleber",
-      "mensagem": "fusão da caixa N47 - da rua do jardim suarão 145",
-      "resumo": "Realizar fusão na caixa N47, Rua do Jardim Suarão 145",
-      "tipo": "Fusão",
-      "urgente": false,
-      "data": "26/05/2026",
-      "hora": "21:43"
-    },
-    {
-      "id": 20,
-      "tecnico": "Cleber",
-      "mensagem": "Abertura de Cto  urgente",
-      "resumo": "Abertura de Cto  urgente",
-      "tipo": "CTO",
-      "urgente": true,
-      "data": "26/05/2026",
-      "hora": "21:27"
     }
   ],
   "nextId": 28

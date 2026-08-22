@@ -22,7 +22,7 @@ const GRUPOS_AUTORIZADOS = new Set([
   // '120363xxxxxxxxx@g.us',  // adicione outros grupos aqui quando precisar
 ])
 const app = express()
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 
 // ── Middlewares ───────────────────────────────────────────────────────────────
 //
@@ -212,7 +212,7 @@ const server = app.listen(PORT, () => {
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
     console.error(`\nPorta ${PORT} já está em uso por outro processo.`)
-    console.error('Libere a porta ou use outra: crie .env com PORT=3001 (ou outro número livre).')
+    console.error('Libere a porta ou use outra: crie backend/.env com PORT=<numero livre>.')
     console.error(`No PowerShell: netstat -ano | findstr :${PORT}`)
     console.error('Anote o PID na última coluna e execute: taskkill /PID <PID> /F\n')
   } else {
